@@ -1,0 +1,169 @@
+:root {
+  --color-gold: #ffd700;
+  --color-gold-deep: #d4af37;
+  --color-navy: #0b1c2d;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif !important;
+  /* Image locale d'anniversaire + léger voile sombre pour la lisibilité */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../assets/BG.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.app-root {
+  background: transparent;
+  color: #fff;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 28, 45, 0.95),
+    rgba(3, 9, 18, 0.92)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+}
+
+.app-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.app-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-gold);
+}
+
+.app-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.glass-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  padding: 1.75rem 1.5rem 1.75rem;
+  /* Glass très transparent pour bien voir le décor derrière */
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 215, 0, 0.17),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(212, 175, 55, 0.12),
+      transparent 55%
+    ),
+    rgba(10, 10, 10, 0.35);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 2.25rem 2rem 2.25rem;
+  }
+}
+
+.form-title {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-deep));
+  border: none;
+  color: #0b0b0b;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.65);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.glass-alert {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+.form-control {
+  background-color: rgba(3, 9, 18, 0.7);
+  color: #fff;
+  border-radius: 14px;
+}
+
+.form-control:focus {
+  background-color: rgba(3, 9, 18, 0.9);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 0.1rem rgba(255, 215, 0, 0.35);
+  color: #fff;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.app-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.6)
+  );
+  backdrop-filter: blur(14px);
+}
+
+.app-footer a {
+  color: var(--color-gold);
+}
+
+::selection {
+  background: rgba(255, 215, 0, 0.16);
+  color: #fff;
+}
+
